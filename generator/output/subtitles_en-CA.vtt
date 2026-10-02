@@ -1,0 +1,13 @@
+WEBVTT
+
+00:00.000 --> 00:15.000
+[SANITY MONITOR]: Heartbeat: 72 BPM | Sanity: 100% | Status: CALM
+
+00:15.000 --> 00:35.000
+[SANITY MONITOR]: Heartbeat: 135 BPM | Sanity: 62% | WARNING: Cold spot detected!
+
+00:35.000 --> 00:50.000
+[SANITY MONITOR]: Heartbeat: 110 BPM | Sanity: 48% | Focus on exit lock code!
+
+00:50.000 --> 01:00.000
+[SANITY MONITOR]: Heartbeat: 195 BPM | Sanity: 5% | CRITICAL PANIC! USE ADRENALINE (0.5x)

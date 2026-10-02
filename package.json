@@ -1,0 +1,20 @@
+{
+  "name": "youtube-horror-game",
+  "version": "1.0.0",
+  "description": "Spectrum of Fear - Playable YouTube Horror Game Engine & Web Simulator",
+  "main": "web_simulator/index.html",
+  "scripts": {
+    "test": "pytest tests/",
+    "build": "python generator/render_360_video.py && python generator/render_vtt_subtitles.py"
+  },
+  "keywords": [
+    "youtube",
+    "horror",
+    "game",
+    "threejs",
+    "equirectangular",
+    "360-video"
+  ],
+  "author": "",
+  "license": "MIT"
+}
