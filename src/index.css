@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --yt-bg: #0f0f0f;
+  --yt-player-bg: #000;
+  --yt-text: #f1f1f1;
+  --yt-subtext: #aaa;
+  --yt-red: #ff0000;
+  --yt-border: #3f3f3f;
+  --yt-progress-bg: rgba(255, 255, 255, 0.2);
+  --yt-control-bg: rgba(8, 8, 8, 0.8);
+  --yt-font: 'Roboto', Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--yt-bg);
+  color: var(--yt-text);
+  font-family: var(--yt-font);
+}
+
+.player-wrapper {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  background: #000;
+}
+
+.video-area {
+  aspect-ratio: 16 / 9;
+  position: relative;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 3px;
+  background: var(--yt-progress-bg);
+  cursor: pointer;
+  transition: height 0.1s;
+}
+
+.progress-bar:hover {
+  height: 5px;
+}
+
+.progress-fill {
+  background: var(--yt-red);
+  height: 100%;
+}
+
+.controls-strip {
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  gap: 8px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+}
+
+@keyframes staticFlash {
+  0% { opacity: 0.95; }
+  100% { opacity: 0; }
+}
+
+.animate-static-flash {
+  animation: staticFlash 300ms ease-out;
+}
+
+@keyframes shake {
+  0%,
+  100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+.animate-shake {
+  animation: shake 300ms ease-in-out;
+}
