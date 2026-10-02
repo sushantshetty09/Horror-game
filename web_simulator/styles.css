@@ -119,6 +119,16 @@ body {
     background: rgba(255, 255, 255, 0.1);
 }
 
+/* Keyboard Focus States for Accessibility */
+.btn-ctrl:focus-visible,
+.key-btn:focus-visible,
+.btn-submit:focus-visible,
+.dropdown-item:focus-visible,
+.comment-input:focus-visible {
+    outline: 2px solid #ff4444;
+    outline-offset: 2px;
+}
+
 .time-display {
     font-size: 13px;
     color: #aaa;

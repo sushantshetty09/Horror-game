@@ -44,11 +44,22 @@ const SUBTITLES = {
 
 // Controls & Menus UI
 function toggleDropdown(id) {
-    const menus = ['cc-menu', 'speed-menu', 'quality-menu'];
+    const menus = [
+        { menuId: 'cc-menu', btnId: 'btn-cc' },
+        { menuId: 'speed-menu', btnId: 'btn-speed' },
+        { menuId: 'quality-menu', btnId: 'btn-quality' }
+    ];
     menus.forEach(m => {
-        if (m !== id) document.getElementById(m).classList.remove('show');
+        const menuEl = document.getElementById(m.menuId);
+        const btnEl = document.getElementById(m.btnId);
+        if (m.menuId === id) {
+            const isShowing = menuEl.classList.toggle('show');
+            if (btnEl) btnEl.setAttribute('aria-expanded', isShowing ? 'true' : 'false');
+        } else {
+            menuEl.classList.remove('show');
+            if (btnEl) btnEl.setAttribute('aria-expanded', 'false');
+        }
     });
-    document.getElementById(id).classList.toggle('show');
 }
 
 function triggerStaticFlash() {
@@ -230,9 +241,11 @@ document.addEventListener('DOMContentLoaded', () => {
             if (videoElement.paused) {
                 videoElement.play();
                 btnPlay.innerText = '⏸';
+                btnPlay.setAttribute('aria-label', 'Pause');
             } else {
                 videoElement.pause();
                 btnPlay.innerText = '▶';
+                btnPlay.setAttribute('aria-label', 'Play');
             }
         });
     }

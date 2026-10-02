@@ -30,9 +30,9 @@
                     <button class="key-btn" onclick="pressKey('7')">7</button>
                     <button class="key-btn" onclick="pressKey('8')">8</button>
                     <button class="key-btn" onclick="pressKey('9')">9</button>
-                    <button class="key-btn" onclick="clearKeypad()">C</button>
+                    <button class="key-btn" onclick="clearKeypad()" aria-label="Clear keypad">C</button>
                     <button class="key-btn" onclick="pressKey('0')">0</button>
-                    <button class="key-btn" onclick="submitKeypad()">OK</button>
+                    <button class="key-btn" onclick="submitKeypad()" aria-label="Submit keypad code">OK</button>
                 </div>
             </div>
 
@@ -46,13 +46,13 @@
             <!-- YouTube Video Controls Bar -->
             <div class="player-controls">
                 <div class="controls-left">
-                    <button class="btn-ctrl" id="btn-play">▶</button>
+                    <button class="btn-ctrl" id="btn-play" aria-label="Play">▶</button>
                     <span class="time-display" id="time-display">00:00 / 01:00</span>
                 </div>
                 <div class="controls-right">
                     <!-- CC Subtitles Selector -->
                     <div class="dropdown-container">
-                        <button class="btn-ctrl" onclick="toggleDropdown('cc-menu')">💬 CC</button>
+                        <button class="btn-ctrl" id="btn-cc" aria-label="Subtitles and closed captions" aria-haspopup="true" aria-expanded="false" onclick="toggleDropdown('cc-menu')">💬 CC</button>
                         <div class="dropdown-menu" id="cc-menu">
                             <div class="dropdown-item active" onclick="selectCC('OFF')">Off</div>
                             <div class="dropdown-item" onclick="selectCC('EMF')">English (EMF Reader)</div>
@@ -64,7 +64,7 @@
 
                     <!-- Speed Selector -->
                     <div class="dropdown-container">
-                        <button class="btn-ctrl" onclick="toggleDropdown('speed-menu')">⏩ Speed</button>
+                        <button class="btn-ctrl" id="btn-speed" aria-label="Playback speed" aria-haspopup="true" aria-expanded="false" onclick="toggleDropdown('speed-menu')">⏩ Speed</button>
                         <div class="dropdown-menu" id="speed-menu">
                             <div class="dropdown-item" onclick="selectSpeed(0.25)">0.25x (Slow-Mo)</div>
                             <div class="dropdown-item" onclick="selectSpeed(0.5)">0.5x (Adrenaline)</div>
@@ -76,7 +76,7 @@
 
                     <!-- Quality Selector (The Core Game Mechanic) -->
                     <div class="dropdown-container">
-                        <button class="btn-ctrl" onclick="toggleDropdown('quality-menu')">⚙️ Quality</button>
+                        <button class="btn-ctrl" id="btn-quality" aria-label="Video quality" aria-haspopup="true" aria-expanded="false" onclick="toggleDropdown('quality-menu')">⚙️ Quality</button>
                         <div class="dropdown-menu" id="quality-menu">
                             <div class="dropdown-item" onclick="selectQuality('144p')">144p (Spectral Thermal)</div>
                             <div class="dropdown-item active" onclick="selectQuality('720p')">720p (Normal Ambient)</div>
@@ -97,7 +97,7 @@
             <h3>Comments (1)</h3>
             <p style="font-size: 13px; color: #aaa; margin-top: 5px;">Enter the 4-digit keypad escape code discovered via quality & subtitle clues:</p>
             <div class="comment-input-group">
-                <input type="text" id="comment-input" class="comment-input" placeholder="Enter 4-digit code (e.g. 7394)..." maxlength="4">
+                <input type="text" id="comment-input" class="comment-input" placeholder="Enter 4-digit code (e.g. 7394)..." maxlength="4" aria-label="Enter 4-digit escape code">
                 <button class="btn-submit" onclick="submitCommentCode()">Submit Code</button>
             </div>
         </div>
